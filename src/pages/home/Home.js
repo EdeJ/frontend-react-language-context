@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../../context/LanguageContextProvider';
 
 const content = {
   nl: {
@@ -8,15 +9,19 @@ const content = {
   },
   es: {
     title: 'Las plantas son una extensión de tu hogar',
-   introText: 'Las plantas son organismos que no pueden moverse y que exhiben fotosíntesis. El nombre Plantae ya no se usa para una unidad taxonómica. En el uso común, el término plantas y flores a menudo se refiere a especies herbáceas de la planta con flores (Angiospermae), por ejemplo, planta ornamental, planta de interior, planta de jardín, planta de contenedor, planta de maceta, flores cortadas. Luego, estos se colocan parcialmente frente a las plantas leñosas, como arbustos y árboles. Juntos, estos constituyen solo una pequeña parte de Viridiplantae.',
+    introText: 'Las plantas son organismos que no pueden moverse y que exhiben fotosíntesis. El nombre Plantae ya no se usa para una unidad taxonómica. En el uso común, el término plantas y flores a menudo se refiere a especies herbáceas de la planta con flores (Angiospermae), por ejemplo, planta ornamental, planta de interior, planta de jardín, planta de contenedor, planta de maceta, flores cortadas. Luego, estos se colocan parcialmente frente a las plantas leñosas, como arbustos y árboles. Juntos, estos constituyen solo una pequeña parte de Viridiplantae.',
   },
 };
 
 function Home() {
+
+  const { language } = useContext(LanguageContext)
+  console.log('current language: ' + language);
+
   return (
     <div className="page-container">
-      <h2>{content.nl.title}</h2>
-      <p>{content.nl.introText}</p>
+      <h2>{content[language].title}</h2>
+      <p>{content[language].introText}</p>
     </div>
   );
 }
