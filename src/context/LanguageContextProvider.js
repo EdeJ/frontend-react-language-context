@@ -19,7 +19,6 @@ function LanguageContextProvider({ children }) {
                 setLanguage('nl');
                 break;
         }
-        console.log(language);
     }
 
     const data = {
