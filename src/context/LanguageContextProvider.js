@@ -7,13 +7,15 @@ function LanguageContextProvider({ children }) {
     const [language, setLanguage] = useState('nl');
 
 
-
-    const toggleLanguage = ()=> {
+    const toggleLanguage = () => {
         switch (language) {
             case 'nl':
                 setLanguage('es');
                 break;
             case 'es':
+                setLanguage('nl');
+                break;
+            default:
                 setLanguage('nl');
                 break;
         }
