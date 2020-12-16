@@ -17,7 +17,7 @@ function AboutUs() {
   return (
     <div className="page-container">
       <h2>{content.nl.title}</h2>
-      <img src={writers} alt="Bob & Betsy"/>
+      <img src={writers} alt="Bob &amp; Betsy" />
       <p>{content.nl.writers}</p>
     </div>
   );

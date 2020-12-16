@@ -46,6 +46,7 @@ nav a:link {
 
 .language-switch {
     display: flex;
+    cursor: pointer;
 }
 
 .language-switch svg {
