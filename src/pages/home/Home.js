@@ -14,9 +14,7 @@ const content = {
 };
 
 function Home() {
-
   const { language } = useContext(LanguageContext)
-  console.log('current language: ' + language);
 
   return (
     <div className="page-container">
