@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { LanguageContext } from '../../context/LanguageContextProvider';
 import headerImage from '../../assets/wall-with-plants.jpg';
 import { ReactComponent as FlagNL } from '../../assets/netherlands.svg';
+import { ReactComponent as FlagES } from '../../assets/spain.svg';
 import './Header.css';
 
 const content = {
@@ -29,8 +30,6 @@ const content = {
 function Header() {
 
   const { language, toggleLanguage } = useContext(LanguageContext);
-  // console.log(language);
-
 
   return (
     <>
@@ -46,21 +45,21 @@ function Header() {
               <NavLink exact to="/all-plants">
                 {content[language].menuItems.allPlants}
               </NavLink>
-              </li>
+            </li>
             <li onClick={toggleLanguage} className="language-switch">
               <p>{content[language].changeTo}</p>
-              <FlagNL />
+              {language === 'nl' ? <FlagNL /> : <FlagES />}
             </li>
           </ul>
         </nav>
         <div className="image-container">
-          <img src={headerImage} alt="Header image plants" className="header-image" />
+          <img src={headerImage} alt="Header plants" className="header-image" />
           <h1>{content[language].title}</h1>
         </div>
 
       </header>
     </>
-  );
+  )
 }
 
 export default Header;
